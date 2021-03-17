@@ -8,8 +8,12 @@ import {
     Keyboard,
     Alert,
 } from "react-native";
+
+import BodyText from "../components/BodyText";
 import Card from "../components/Card";
 import Input from "../components/Input";
+import StartButton from "../components/StartButton";
+import TitleText from "../components/TitleText";
 import Colors from "../constants/colors";
 
 const StartScreen = (props) => {
@@ -48,7 +52,9 @@ const StartScreen = (props) => {
                     <Text>Chosen Number: {selNum}</Text>
                 </View>
                 <View>
-                    <Button title='Start game' onPress={() => props.onStart(selNum)} />
+                    <StartButton title='Start game' onPress={() => props.onStart(selNum)} >
+                        START GAME
+                    </StartButton>
                 </View>
             </View>
         );
@@ -61,10 +67,10 @@ const StartScreen = (props) => {
         }}
         >
         <View style={styles.startScreen}>
-            <Text style={styles.title1}> Start a new game</Text>
+            <TitleText style={styles.title1}> Start a new game</TitleText>
             {/* <View style={styles.inputContainer}> */}
             <Card style={styles.inputContainer}>
-            <Text>Select a Number</Text>
+            <BodyText style={styles.text}>Select a Number</BodyText>
 
             <Input
                 style={styles.inputField}
@@ -107,8 +113,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     title1: {
-        fontSize: 20,
-        marginVertical: 20,
+        fontSize: 25,
+        marginVertical: 20
     },
     btnContainer: {
         flexDirection: "row",
@@ -136,6 +142,9 @@ const styles = StyleSheet.create({
     },
     startBtn: {
         margin: 10
+    },
+    text: {
+        fontFamily: 'open-sans'
     }
 
 });
